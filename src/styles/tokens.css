@@ -1,0 +1,116 @@
+/**
+ * Sleeping Warrior Camp — Design System Tokens
+ *
+ * Verified directly from inline stylesheets and page definitions on:
+ * - https://sleepingwarriorcamp.com/ (Page ID 11)
+ * - https://sleepingwarriorcamp.com/suites-camp/batian-cabin/ (Page ID 443)
+ * - https://sleepingwarriorcamp.com/suites-camp/nelion-cabin/ (Page ID 586)
+ * - https://sleepingwarriorcamp.com/suites-camp/moran-tent/ (Page ID 605)
+ * - https://sleepingwarriorcamp.com/wrc-safari-rally-2027/ (Page ID 1469)
+ *
+ * Phase 2 Visual Direction: White-First Editorial Luxury
+ * - Primary background: clean white (#FFFFFF)
+ * - Supporting surface: warm parchment (#F6F3E9)
+ * - Supporting neutral: valley sand (#E7E5D8)
+ * - Primary brand accent: terracotta (#8A251C)
+ * - Hover accent: deep terracotta (#6F1D16)
+ * - Primary text: near-black (#0C0D0D)
+ * - Secondary text: charcoal (#3B3B3B)
+ */
+
+:root {
+  /* === Verified Brand Palette === */
+  --swc-color-white: #ffffff;
+  --swc-color-parchment-cream: #f6f3e9; /* Supporting warm ivory surface (.room-overlay:hover, .urgency-status-note) */
+  --swc-color-valley-sand: #e7e5d8; /* Supporting neutral container (.hero-slider-wrapper) */
+
+  --swc-color-terracotta-primary: #8a251c; /* Primary CTA button & intentional accent (.room-btn, .btn-direct-wa, .nav-arrow) */
+  --swc-color-terracotta-hover: #6f1d16; /* CTA hover state (.btn-direct-wa:hover) */
+  --swc-color-terracotta-warm: #942a1e; /* Status/preview text (.urgency-status-note) */
+  --swc-color-crimson-deep: #5e0f02; /* Deep accent badge (--badge-bg) */
+
+  --swc-color-obsidian: #0c0d0d; /* Primary dark heading ink (.room-title:hover) */
+  --swc-color-charcoal: #3b3b3b; /* Secondary body copy ink (rgb(59, 59, 59) in .room-desc) */
+  --swc-color-slate-dark: #333333; /* Dark card fallback (.vision-card) */
+  --swc-color-border-muted: #cccccc; /* Disabled/subtle border (.swiper-button-disabled) */
+
+  /* === Restrained Supporting Accents & Dividers === */
+  --swc-color-shamba-olive: #3d4f38; /* Restrained natural green for small supporting details */
+  --swc-color-shamba-sage-bg: #f4f6f2;
+  --swc-color-escarpment-ochre: #8c6239;
+  --swc-color-border-hairline: rgba(12, 13, 13, 0.1);
+  --swc-color-border-strong: rgba(12, 13, 13, 0.18);
+  --swc-color-overlay-scrim: rgba(12, 13, 13, 0.44);
+  --swc-color-glass: rgba(255, 255, 255, 0.48);
+  --swc-color-glass-border: rgba(255, 255, 255, 0.62);
+  --swc-shadow-glass: 0 10px 30px rgba(12, 13, 13, 0.05);
+  --swc-blur-glass: blur(22px) saturate(180%);
+
+  /* === White-First Surface & Text Assignments === */
+  --swc-bg-canvas: var(--swc-color-white); /* Dominant white background */
+  --swc-bg-surface: var(--swc-color-white);
+  --swc-bg-elevated: var(
+    --swc-color-parchment-cream
+  ); /* Selected sections, drawers & subtle transitions */
+  --swc-bg-subtle: var(--swc-color-valley-sand);
+  --swc-text-primary: var(--swc-color-obsidian);
+  --swc-text-secondary: var(--swc-color-charcoal);
+  --swc-text-muted: #66635b;
+
+  /* === Typography ===
+   * Official site specifies:
+   * - --heading-font: 'Carefree' (custom uploaded display font; falls back to Cormorant Garamond editorial serif)
+   * - Primary UI/Body font: 'Raleway', sans-serif (weights 400, 500, 600, 700)
+   * - Secondary UI/Numeric font: 'Montserrat', sans-serif (weights 400, 500, 600, 700)
+   */
+  --swc-font-display: 'Carefree', 'Cormorant Garamond', Georgia, serif;
+  --swc-font-sans: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --swc-font-numeric: 'Montserrat', 'Raleway', sans-serif;
+
+  /* === Fluid Editorial Type Scale === */
+  --swc-text-2xs: 0.6875rem; /* 11px — restrained uppercase micro-labels */
+  --swc-text-xs: 0.75rem; /* 12px — badges, metadata */
+  --swc-text-sm: 0.875rem; /* 14px — secondary labels, dietary notes */
+  --swc-text-base: 1rem; /* 16px — primary descriptions */
+  --swc-text-lg: 1.1875rem; /* 19px — dish titles, emphasized copy */
+  --swc-text-xl: 1.5rem; /* 24px — editorial callouts */
+  --swc-text-2xl: clamp(1.85rem, 3vw, 2.65rem); /* Category headers */
+  --swc-text-display: clamp(2.35rem, 4.6vw, 3.6rem); /* Hero display */
+
+  /* === Spacing & Layout === */
+  --swc-space-1: 0.25rem;
+  --swc-space-2: 0.5rem;
+  --swc-space-3: 0.75rem;
+  --swc-space-4: 1rem;
+  --swc-space-5: 1.25rem;
+  --swc-space-6: 1.5rem;
+  --swc-space-8: 2rem;
+  --swc-space-10: 2.5rem;
+  --swc-space-12: 3rem;
+  --swc-space-16: 4rem;
+  --swc-space-20: 5rem;
+
+  /* === Minimal, Consistent Corner Radii === */
+  --swc-radius-xs: 2px;
+  --swc-radius-sm: 4px;
+  --swc-radius-md: 6px;
+  --swc-radius-lg: 8px;
+  --swc-radius-pill: 9999px;
+
+  /* === Restrained Shadows === */
+  --swc-shadow-subtle: 0 2px 12px rgba(12, 13, 13, 0.04);
+  --swc-shadow-drawer: -12px 0 36px rgba(12, 13, 13, 0.14);
+  --swc-shadow-cta: 0 4px 12px rgba(138, 37, 28, 0.18);
+  --swc-shadow-cta-hover: 0 6px 18px rgba(138, 37, 28, 0.26);
+
+  /* === Restrained Animation Timing & Easing === */
+  --swc-ease-editorial: cubic-bezier(0.25, 1, 0.5, 1);
+  --swc-ease-out-calm: cubic-bezier(0.22, 1, 0.36, 1);
+  --swc-transition-fast: 180ms ease;
+  --swc-transition-calm: 280ms var(--swc-ease-out-calm);
+  --swc-transition-editorial: 420ms var(--swc-ease-editorial);
+  --swc-duration-reveal: 640ms;
+  --swc-duration-cinematic: 22s;
+  --swc-stagger-step: 70ms;
+  --swc-image-zoom: 1.045;
+}

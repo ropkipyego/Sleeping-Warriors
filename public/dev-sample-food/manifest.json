@@ -1,0 +1,296 @@
+{
+  "manifestVersion": "1.0.0",
+  "purpose": "Development-only sample food photography for Phase 2 design review of the Sleeping Warrior Camp digital guest menu. None of these photographs depict dishes prepared at Sleeping Warrior Camp.",
+  "assets": [
+    {
+      "sampleItemId": "sample-bf-farm-eggs",
+      "intendedDish": "Farm-Style Poached Eggs & Sourdough Toast",
+      "localPath": "/dev-sample-food/breakfast-farm-eggs-toast.jpg",
+      "sourceTitle": "File:Breakfast toast with poached eggs, bacon, tomatoes, avocado.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Breakfast_toast_with_poached_eggs,_bacon,_tomatoes,_avocado.jpg",
+      "author": "Kgbo",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-bf-fruit-bowl",
+      "intendedDish": "Fresh Seasonal Rift Valley Fruit Bowl",
+      "localPath": "/dev-sample-food/breakfast-seasonal-fruit-bowl.jpg",
+      "sourceTitle": "File:Fruit salad flanked by Sabre flatware.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Fruit_salad_flanked_by_Sabre_flatware.jpg",
+      "author": "Dinner Series",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "sampleItemId": "sample-bf-pancakes",
+      "intendedDish": "Buttermilk Griddle Pancakes with Compote & Fruit",
+      "localPath": "/dev-sample-food/breakfast-pancakes-berries.jpg",
+      "sourceTitle": "File:020260403 a Berry Good Morning.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:020260403_a_Berry_Good_Morning.jpg",
+      "author": "Auctor quaerendae",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-bf-porridge",
+      "intendedDish": "Warm Rolled-Oat & Millet Porridge with Sliced Fruit",
+      "localPath": "/dev-sample-food/breakfast-porridge-fruit.jpg",
+      "sourceTitle": "File:Banana Oatmeal Breakfast Bowl (44302857265).jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Banana_Oatmeal_Breakfast_Bowl_(44302857265).jpg",
+      "author": "Ella Olsson",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "sampleItemId": "sample-bf-cooked-plate",
+      "intendedDish": "Escarpment Cooked Breakfast Plate",
+      "localPath": "/dev-sample-food/breakfast-cooked-plate.jpg",
+      "sourceTitle": "File:Full English Breakfast - Foodilic 2024-01-29.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Full_English_Breakfast_-_Foodilic_2024-01-29.jpg",
+      "author": "Andy Li",
+      "license": "CC0 1.0 Public Domain Dedication",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "sampleItemId": "sample-gd-seasonal-salad",
+      "intendedDish": "Seasonal Garden Leaf & Herb Salad",
+      "localPath": "/dev-sample-food/garden-seasonal-salad.jpg",
+      "sourceTitle": "File:Fresh salad with arugula, cabbage and tomato in a glass bowl.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Fresh_salad_with_arugula,_cabbage_and_tomato_in_a_glass_bowl.jpg",
+      "author": "Horacio Cambeiro",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "sampleItemId": "sample-gd-roasted-veg-bowl",
+      "intendedDish": "Char-Roasted Market Vegetable Bowl",
+      "localPath": "/dev-sample-food/garden-roasted-vegetable-bowl.jpg",
+      "sourceTitle": "File:Liat Portal for Foodie Disorder - Roasted broccoli cauliflower and onions.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Roasted_broccoli_cauliflower_and_onions.jpg",
+      "author": "Liat Portal / HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-gd-soup-of-the-day",
+      "intendedDish": "Fresh Soup of the Day — Roasted Butternut & Herb Velouté",
+      "localPath": "/dev-sample-food/garden-soup-of-the-day.jpg",
+      "sourceTitle": "File:DSC 7126 Creamy pumpkin soup garnished with a swirl of cream and chopped herbs served in a white soup cup.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:DSC_7126_Creamy_pumpkin_soup_garnished_with_a_swirl_of_cream_and_chopped_herbs_served_in_a_white_soup_cup.jpg",
+      "author": "PattayaPatrol",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-gd-grilled-chicken-salad",
+      "intendedDish": "Warm Grilled Chicken & Crisp Garden Salad",
+      "localPath": "/dev-sample-food/garden-grilled-chicken-salad.jpg",
+      "sourceTitle": "File:Liat Portal for Foodie Disorder - Grilled chicken thighs with ptitim and Israeli salad.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Grilled_chicken_thighs_with_ptitim_and_Israeli_salad.jpg",
+      "author": "Liat Portal / HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-gd-grain-veg-bowl",
+      "intendedDish": "Warm Vegetarian Grain & Skillet Vegetable Bowl",
+      "localPath": "/dev-sample-food/garden-grain-vegetable-bowl.jpg",
+      "sourceTitle": "File:Horka Litinova Panev Tofu Zlaty Klas 2025.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Horka_Litinova_Panev_Tofu_Zlaty_Klas_2025.jpg",
+      "author": "Mojmir Churavy",
+      "license": "CC0 1.0 Public Domain Dedication",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "sampleItemId": "sample-mn-grilled-chicken",
+      "intendedDish": "Pan-Roasted Half Chicken with Seasonal Vegetables",
+      "localPath": "/dev-sample-food/main-grilled-chicken-vegetables.jpg",
+      "sourceTitle": "File:Liat Portal for Foodie Disorder - Grilled Chicken with Roasted Vegetables.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Grilled_Chicken_with_Roasted_Vegetables.jpg",
+      "author": "Liat Portal / HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-mn-grilled-fish",
+      "intendedDish": "Seared Fillet of Catch with Herb Potatoes & Greens",
+      "localPath": "/dev-sample-food/main-grilled-fish-side.jpg",
+      "sourceTitle": "File:Liat Portal for Foodie Disorder - Grilled Salmon with Roasted Potatoes and Asparagus.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Grilled_Salmon_with_Roasted_Potatoes_and_Asparagus.jpg",
+      "author": "Liat Portal / HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-mn-slow-beef-stew",
+      "intendedDish": "Slow-Braised Beef Stew with Root Vegetables",
+      "localPath": "/dev-sample-food/main-slow-beef-stew.jpg",
+      "sourceTitle": "File:Beef stew with potatoes and carrots - Massachusetts.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Beef_stew_with_potatoes_and_carrots_-_Massachusetts.jpg",
+      "author": "Daderot",
+      "license": "CC0 1.0 Public Domain Dedication",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "sampleItemId": "sample-mn-vegetarian-main",
+      "intendedDish": "Spiced Seasonal Vegetable & Pulse Braise with Steamed Rice",
+      "localPath": "/dev-sample-food/main-seasonal-vegetarian.jpg",
+      "sourceTitle": "File:GhantaCurry.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:GhantaCurry.jpg",
+      "author": "Subhransuphotography",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-mn-roasted-meat",
+      "intendedDish": "Rosemary-Crusted Roasted Lamb Cutlets with Vegetables",
+      "localPath": "/dev-sample-food/main-roasted-meat-vegetables.jpg",
+      "sourceTitle": "File:Liat Portal for Foodie Disorder - Homemade Lamb Chops with Rice and Grilled Vegetables.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Homemade_Lamb_Chops_with_Rice_and_Grilled_Vegetables.jpg",
+      "author": "Liat Portal / HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-sd-seasonal-vegetables",
+      "intendedDish": "Sautéed Seasonal Market Greens & Young Vegetables",
+      "localPath": "/dev-sample-food/side-seasonal-vegetables.jpg",
+      "sourceTitle": "File:DFC 0765 Colorful stir-fry with baby corn cashews and fresh greens garnished with an edible purple orchid.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:DFC_0765_Colorful_stir-fry_with_baby_corn_cashews_and_fresh_greens_garnished_with_an_edible_purple_orchid.jpg",
+      "author": "PattayaPatrol",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-sd-roasted-potatoes",
+      "intendedDish": "Golden Herb-Roasted Highland Potatoes",
+      "localPath": "/dev-sample-food/side-roasted-potatoes.jpg",
+      "sourceTitle": "File:02022 0202 Sour Milk with Roasted Potatoes with dill.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:02022_0202_Sour_Milk_with_Roasted_Potatoes_with_dill.jpg",
+      "author": "Silar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-sd-steamed-rice",
+      "intendedDish": "Fragrant Steamed Long-Grain Rice",
+      "localPath": "/dev-sample-food/side-steamed-rice.jpg",
+      "sourceTitle": "File:A bowl of rice.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:A_bowl_of_rice.jpg",
+      "author": "Douglas Perkins",
+      "license": "CC0 1.0 Public Domain Dedication",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "sampleItemId": "sample-sd-fresh-salad",
+      "intendedDish": "Crisp Cucumber & Herb Side Salad",
+      "localPath": "/dev-sample-food/side-fresh-salad.jpg",
+      "sourceTitle": "File:Argentine cucumber salad with balsamic vinegar.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Argentine_cucumber_salad_with_balsamic_vinegar.jpg",
+      "author": "Horacio Cambeiro",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "sampleItemId": "sample-sd-ugali-staple",
+      "intendedDish": "Traditional White Maize Ugali & Braised Sukuma Wiki",
+      "localPath": "/dev-sample-food/side-ugali-greens.jpg",
+      "sourceTitle": "File:Fried Steak, Ugali and Sukuma Wiki (Embu).JPG",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Fried_Steak,_Ugali_and_Sukuma_Wiki_(Embu).JPG",
+      "author": "Napendakukula",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-ds-seasonal-fruit",
+      "intendedDish": "Chilled Seasonal Melon, Pineapple & Berry Plate",
+      "localPath": "/dev-sample-food/dessert-seasonal-fruit-plate.jpg",
+      "sourceTitle": "File:Liat Portal for Foodie Disorder - Assorted Fresh Fruit Tray.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Assorted_Fresh_Fruit_Tray.jpg",
+      "author": "Liat Portal / HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-ds-baked-tart",
+      "intendedDish": "Warm Baked Orchard Apple & Cinnamon Tart",
+      "localPath": "/dev-sample-food/dessert-baked-apple-tart.jpg",
+      "sourceTitle": "File:Apple pie - plate and cutlery.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Apple_pie_-_plate_and_cutlery.jpg",
+      "author": "Vincent Ros",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "sampleItemId": "sample-ds-chocolate-cake",
+      "intendedDish": "Dark Chocolate Ganache Gateau",
+      "localPath": "/dev-sample-food/dessert-chocolate-cake.jpg",
+      "sourceTitle": "File:Piece of chocolate cake on a white plate decorated with chocolate sauce.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Piece_of_chocolate_cake_on_a_white_plate_decorated_with_chocolate_sauce.jpg",
+      "author": "Daria Yakovleva",
+      "license": "CC0 1.0 Public Domain Dedication",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "sampleItemId": "sample-ds-fruit-panna-cotta",
+      "intendedDish": "Vanilla Bean Panna Cotta with Fresh Berries",
+      "localPath": "/dev-sample-food/dessert-berry-panna-cotta.jpg",
+      "sourceTitle": "File:Panna Cotta with fresh berries.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Panna_Cotta_with_fresh_berries.jpg",
+      "author": "Kimberly Vardeman",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "sampleItemId": "sample-bv-coffee",
+      "intendedDish": "Freshly Brewed Kenyan Filter & Espresso Coffee",
+      "localPath": "/dev-sample-food/beverage-hot-coffee.jpg",
+      "sourceTitle": "File:A cup of espresso.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:A_cup_of_espresso.jpg",
+      "author": "Vee Satayamas",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-bv-tea",
+      "intendedDish": "Highland Loose-Leaf Tea & Herbal Infusion Pot",
+      "localPath": "/dev-sample-food/beverage-loose-leaf-tea.jpg",
+      "sourceTitle": "File:Corn silk tea cup teapot 01.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Corn_silk_tea_cup_teapot_01.jpg",
+      "author": "KQuhen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-bv-fresh-juice",
+      "intendedDish": "Chilled Fresh-Pressed Citrus & Tropical Juice",
+      "localPath": "/dev-sample-food/beverage-fresh-pressed-juice.jpg",
+      "sourceTitle": "File:Glass of Fresh Orange Juice.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Glass_of_Fresh_Orange_Juice.jpg",
+      "author": "Rebeloasisx",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-bv-still-water",
+      "intendedDish": "Chilled Still Mineral Water",
+      "localPath": "/dev-sample-food/beverage-still-water.jpg",
+      "sourceTitle": "File:Belu Bottled Mineral Water.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Belu_Bottled_Mineral_Water.jpg",
+      "author": "Beluwater",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "sampleItemId": "sample-bv-sparkling-water",
+      "intendedDish": "Chilled Sparkling Mineral Water with Citrus",
+      "localPath": "/dev-sample-food/beverage-sparkling-water.jpg",
+      "sourceTitle": "File:Mattoni sklo.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mattoni_sklo.jpg",
+      "author": "Jirka.h23",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+---
+description: Enforce strict brand asset authenticity, separate development-only sample menu data from production catalog, and block third-party WP stock/AI assets.
+globs: src/**/*.{ts,tsx,json}
+alwaysApply: false
+---
+
+# Content & Brand Asset Integrity
+
+## 1. Separation of Verified Brand Data vs. Development-Only Sample Catalogue
+
+- Never mix illustrative sample dishes with verified camp assets in `src/data/brand.verified.ts`.
+- Keep the production baseline catalog (`INITIAL_MENU_CATALOG`) in `src/data/brand.verified.ts` empty with `status: 'awaiting_official_data'` until the camp's approved menu is supplied.
+- Development-only sample dishes and provisional sample KES prices for design review must reside exclusively in `src/data/sampleMenu.dev.ts` with `status: 'sample_preview'`, `isSamplePreview: true`, and `isSampleData: true` on every item.
+- Whenever sample content is rendered, the persistent notice `"MENU PREVIEW — SAMPLE DISHES AND PRICES"` must remain visible on screen, and every price must be clearly marked as a `SAMPLE` amount.
+- Never claim that sample dishes are actual Sleeping Warrior offerings or that specific sample ingredients are grown on the camp's land unless confirmed. Do not invent alcoholic beverage offerings.
+
+## 2. Verified vs. Excluded WordPress Media Assets
+
+Only use verified Sleeping Warrior Camp assets from `src/data/brand.verified.ts` for camp property and experience imagery. Never reference the 19 third-party stock, Freepik, or AI-generated files present in the camp's WordPress media library:
+
+- **Forbidden AI files**: `Gemini_Generated_Image_*`
+- **Forbidden Freepik/stock files**: `freepik__*`, `2148704430.webp`, `2148761542.webp`, `2151441260.webp`, `2149026833.webp`, `38551.webp`, `young-woman-*`, `young-beautiful-*`, `woman-sitting-swimming-pool-*`, `tree.png`, `Untitled-design-19.png`

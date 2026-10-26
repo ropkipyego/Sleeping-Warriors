@@ -1,0 +1,104 @@
+.navBar {
+  background: var(--swc-color-glass);
+  backdrop-filter: var(--swc-blur-glass);
+  -webkit-backdrop-filter: var(--swc-blur-glass);
+  border-bottom: 1px solid var(--swc-color-glass-border);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--swc-space-6);
+}
+
+.tabList {
+  display: flex;
+  align-items: center;
+  gap: var(--swc-space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: var(--swc-space-2) 0;
+}
+
+.tabList::-webkit-scrollbar {
+  display: none;
+}
+
+.tabButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--swc-space-2);
+  padding: 9px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--swc-radius-xs);
+  background: transparent;
+  color: var(--swc-text-secondary);
+  font-family: var(--swc-font-sans);
+  font-size: var(--swc-text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color var(--swc-transition-fast),
+    background-color var(--swc-transition-fast),
+    border-color var(--swc-transition-fast),
+    transform var(--swc-transition-fast);
+}
+
+.tabButton::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--swc-color-terracotta-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--swc-transition-calm);
+}
+
+.tabButton:hover {
+  color: var(--swc-text-primary);
+  background-color: var(--swc-color-parchment-cream);
+}
+
+.tabActive {
+  color: var(--swc-color-terracotta-primary);
+  font-weight: 700;
+  background-color: var(--swc-color-parchment-cream);
+  border-color: var(--swc-color-border-hairline);
+}
+
+.tabActive::after {
+  transform: scaleX(1);
+}
+
+.tabTitle {
+  line-height: 1.2;
+}
+
+.tabCount {
+  font-family: var(--swc-font-numeric);
+  font-size: var(--swc-text-2xs);
+  font-weight: 600;
+  color: var(--swc-text-muted);
+  transition: color var(--swc-transition-fast);
+}
+
+.tabActive .tabCount {
+  color: var(--swc-color-terracotta-primary);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 var(--swc-space-4);
+  }
+
+  .tabButton {
+    padding: 8px 12px;
+    font-size: var(--swc-text-xs);
+  }
+}

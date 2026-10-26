@@ -1,0 +1,115 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--swc-color-white);
+  color: var(--swc-text-primary);
+}
+
+.stickyChrome {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: transparent;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--swc-space-8) var(--swc-space-6) var(--swc-space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--swc-space-6);
+  scroll-margin-top: 7.5rem;
+}
+
+@keyframes swcCanvasIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menuCanvas {
+  display: flex;
+  flex-direction: column;
+  animation: swcCanvasIn var(--swc-duration-reveal) var(--swc-ease-editorial) both;
+}
+
+.statePanel {
+  margin: var(--swc-space-6) 0;
+  padding: var(--swc-space-8);
+  background-color: var(--swc-color-parchment-cream);
+  border: 1px solid var(--swc-color-border-hairline);
+  border-left: 4px solid var(--swc-color-terracotta-primary);
+  border-radius: var(--swc-radius-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--swc-space-4);
+}
+
+.stateIcon {
+  color: var(--swc-color-terracotta-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stateBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--swc-space-2);
+}
+
+.stateEyebrow {
+  font-family: var(--swc-font-numeric);
+  font-size: var(--swc-text-2xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--swc-color-terracotta-warm);
+}
+
+.stateTitle {
+  font-family: var(--swc-font-display);
+  font-size: var(--swc-text-xl);
+  color: var(--swc-text-primary);
+}
+
+.stateDescription {
+  font-size: var(--swc-text-base);
+  line-height: 1.65;
+  color: var(--swc-text-secondary);
+  max-width: 72ch;
+}
+
+.retryBtn {
+  margin-top: var(--swc-space-2);
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--swc-space-2);
+  padding: 8px 16px;
+  border-radius: var(--swc-radius-xs);
+  border: 1px solid var(--swc-color-terracotta-primary);
+  background-color: var(--swc-color-terracotta-primary);
+  color: var(--swc-color-white);
+  font-size: var(--swc-text-xs);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: var(--swc-space-6) var(--swc-space-4) var(--swc-space-16);
+  }
+
+  .statePanel {
+    padding: var(--swc-space-5);
+  }
+}

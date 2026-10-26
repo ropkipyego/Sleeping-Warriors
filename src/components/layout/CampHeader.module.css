@@ -1,0 +1,126 @@
+@keyframes swcChromeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  background: var(--swc-color-glass);
+  backdrop-filter: var(--swc-blur-glass);
+  -webkit-backdrop-filter: var(--swc-blur-glass);
+  border-bottom: 1px solid var(--swc-color-glass-border);
+  box-shadow: var(--swc-shadow-glass);
+  animation: swcChromeIn var(--swc-transition-editorial) both;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--swc-space-3) var(--swc-space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--swc-space-4);
+}
+
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--swc-space-3);
+  text-decoration: none;
+  color: var(--swc-text-primary);
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--swc-transition-calm);
+}
+
+.brandLink:hover .logo {
+  transform: scale(1.03);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  font-family: var(--swc-font-numeric);
+  font-size: var(--swc-text-2xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--swc-color-terracotta-primary);
+}
+
+.brandName {
+  font-family: var(--swc-font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--swc-text-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--swc-space-2);
+}
+
+.iconBtn,
+.menuAnchorBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--swc-space-2);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--swc-radius-xs);
+  background-color: rgba(255, 255, 255, 0.42);
+  font-family: var(--swc-font-sans);
+  font-size: var(--swc-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--swc-text-secondary);
+  cursor: pointer;
+  padding: var(--swc-space-2) var(--swc-space-4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    color var(--swc-transition-fast),
+    border-color var(--swc-transition-fast),
+    background-color var(--swc-transition-fast),
+    transform var(--swc-transition-fast);
+}
+
+.iconBtn:hover,
+.menuAnchorBtn:hover {
+  color: var(--swc-color-terracotta-primary);
+  border-color: var(--swc-color-terracotta-primary);
+  background-color: rgba(255, 255, 255, 0.72);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--swc-space-2) var(--swc-space-4);
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .brandName {
+    font-size: 1.15rem;
+  }
+
+  .iconBtn span {
+    display: none;
+  }
+}
