@@ -82,12 +82,13 @@
   flex-direction: column;
   text-align: left;
   border: 1px solid var(--swc-color-border-hairline);
-  border-radius: var(--swc-radius-sm);
+  border-radius: var(--swc-radius-lg);
   background: var(--swc-color-white);
   overflow: hidden;
   cursor: pointer;
   padding: 0;
   color: inherit;
+  box-shadow: var(--swc-shadow-subtle);
   transition:
     transform var(--swc-transition-calm),
     border-color var(--swc-transition-calm),
@@ -95,46 +96,70 @@
 }
 
 .categoryCard:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--swc-color-border-strong);
-  box-shadow: var(--swc-shadow-subtle);
+  box-shadow: 0 16px 36px rgba(12, 13, 13, 0.08);
 }
 
 .categoryImage {
+  position: relative;
   width: 100%;
+}
+
+.categoryIcon {
+  position: absolute;
+  top: var(--swc-space-3);
+  left: var(--swc-space-3);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--swc-radius-pill);
+  color: var(--swc-color-terracotta-primary);
+  background: var(--swc-color-glass);
+  border: 1px solid var(--swc-color-glass-border);
+  backdrop-filter: var(--swc-blur-glass);
+  -webkit-backdrop-filter: var(--swc-blur-glass);
+  box-shadow: var(--swc-shadow-glass);
 }
 
 .categoryBody {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   grid-template-areas:
-    'icon title arrow'
-    'icon count arrow';
-  gap: 2px var(--swc-space-2);
+    'title arrow'
+    'subtitle arrow'
+    'count arrow';
+  gap: 2px var(--swc-space-3);
   align-items: center;
-  padding: var(--swc-space-4);
-}
-
-.categoryIcon {
-  grid-area: icon;
-  color: var(--swc-color-terracotta-primary);
-  display: inline-flex;
+  padding: var(--swc-space-5);
 }
 
 .categoryTitle {
   grid-area: title;
   font-family: var(--swc-font-display);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 500;
+}
+
+.categorySubtitle {
+  grid-area: subtitle;
+  font-size: var(--swc-text-sm);
+  line-height: 1.4;
+  color: var(--swc-text-secondary);
 }
 
 .categoryCount {
   grid-area: count;
+  margin-top: var(--swc-space-1);
   font-family: var(--swc-font-numeric);
   font-size: var(--swc-text-2xs);
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--swc-text-muted);
+  color: var(--swc-color-terracotta-primary);
 }
 
 .categoryArrow {
@@ -147,7 +172,7 @@
 
 .categoryCard:hover .categoryArrow {
   color: var(--swc-color-terracotta-primary);
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 .landToTable {
@@ -180,8 +205,16 @@
 }
 
 .pillarIcon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--swc-radius-pill);
   color: var(--swc-color-terracotta-primary);
-  margin-top: 2px;
+  background: var(--swc-color-white);
+  border: 1px solid var(--swc-color-border-hairline);
 }
 
 .pillarTitle {

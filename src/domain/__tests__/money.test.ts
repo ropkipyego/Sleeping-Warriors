@@ -34,16 +34,18 @@ describe('money & catalog boundary domain logic', () => {
     expect(DEV_SAMPLE_MENU_ITEMS).toHaveLength(29);
   });
 
-  it('never silently loads sample dishes or sample prices in production mode when no approved catalog is supplied', () => {
+  it('serves the dummy sample menu in production until an approved catalog is supplied', () => {
     const prodAuto = resolveMenuCatalog({ isProdEnv: true, mode: 'auto' });
-    expect(prodAuto.status).toBe('awaiting_official_data');
-    expect(prodAuto.items).toHaveLength(0);
+    expect(prodAuto.status).toBe('sample_preview');
+    expect(prodAuto.isSamplePreview).toBe(true);
+    expect(prodAuto.items).toHaveLength(29);
+    expect(prodAuto.categories).toHaveLength(6);
 
-    const prodForcedSample = resolveMenuCatalog({
+    const prodEmpty = resolveMenuCatalog({
       isProdEnv: true,
-      mode: 'sample_preview',
+      mode: 'production_empty',
     });
-    expect(prodForcedSample.status).toBe('awaiting_official_data');
-    expect(prodForcedSample.items).toHaveLength(0);
+    expect(prodEmpty.status).toBe('awaiting_official_data');
+    expect(prodEmpty.items).toHaveLength(0);
   });
 });

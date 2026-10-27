@@ -101,6 +101,7 @@ export function App({ initialCatalogMode = 'auto', isProdEnvOverride }: AppProps
 
   const handleSelectCategory = (categoryId: string) => {
     setActiveCategoryId(categoryId);
+    setActiveDetailItem(null);
     scrollIntoViewSafe(menuStartRef.current);
   };
 
@@ -121,11 +122,12 @@ export function App({ initialCatalogMode = 'auto', isProdEnvOverride }: AppProps
           onExploreMenu={handleExploreMenu}
         />
 
-        {hasMenuItems && !isDashboardView && catalog && (
+        {hasMenuItems && catalog && (
           <CategoryNav
             categories={catalog.categories}
             activeCategoryId={activeCategoryId}
             onSelectCategory={handleSelectCategory}
+            onSelectHome={handleGoHome}
             itemCountsByCategory={itemCountsByCategory}
           />
         )}
@@ -175,10 +177,9 @@ export function App({ initialCatalogMode = 'auto', isProdEnvOverride }: AppProps
                 Awaiting Official Camp Menu, Pricing &amp; Allergen Confirmation
               </h2>
               <p className={styles.stateDescription}>
-                In production mode without an approved camp catalogue, sample dishes and
-                provisional prices are never silently loaded. Please speak with your camp
-                host at the Valley Dining Deck or call +254 727 844 134 for today’s shamba
-                harvest selections.
+                The official camp catalogue has not been supplied yet. Please speak with
+                your camp host at the Valley Dining Deck or call +254 727 844 134 for
+                today’s shamba harvest selections.
               </p>
             </div>
           </section>
@@ -230,7 +231,7 @@ export function App({ initialCatalogMode = 'auto', isProdEnvOverride }: AppProps
         }}
       />
 
-      <CampFooter isSamplePreview={isSamplePreview} />
+      {isDashboardView && <CampFooter isSamplePreview={isSamplePreview} />}
     </div>
   );
 }

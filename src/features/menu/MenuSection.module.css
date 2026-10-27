@@ -63,7 +63,14 @@
 
 .categoryIcon {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--swc-radius-pill);
   color: var(--swc-color-terracotta-primary);
+  background: var(--swc-color-parchment-cream);
+  border: 1px solid var(--swc-color-border-hairline);
 }
 
 .categorySubtitle {
@@ -88,7 +95,8 @@
   padding: var(--swc-space-6);
   background-color: var(--swc-color-parchment-cream);
   border: 1px solid var(--swc-color-border-hairline);
-  border-radius: var(--swc-radius-sm);
+  border-radius: var(--swc-radius-lg);
+  box-shadow: var(--swc-shadow-subtle);
   transition:
     border-color var(--swc-transition-calm),
     box-shadow var(--swc-transition-calm),
@@ -278,15 +286,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--swc-space-4);
-  padding-bottom: var(--swc-space-5);
-  border-bottom: 1px solid var(--swc-color-border-hairline);
+  padding: var(--swc-space-4);
+  border: 1px solid var(--swc-color-border-hairline);
+  border-radius: var(--swc-radius-lg);
+  background-color: var(--swc-color-white);
+  box-shadow: var(--swc-shadow-subtle);
   animation: swcSectionFadeIn var(--swc-duration-reveal) var(--swc-ease-editorial) both;
   animation-delay: calc(var(--swc-stagger, 0) * var(--swc-stagger-step));
-  transition: transform var(--swc-transition-calm);
+  transition:
+    transform var(--swc-transition-calm),
+    box-shadow var(--swc-transition-calm);
 }
 
 .pairItem:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(12, 13, 13, 0.08);
 }
 
 .pairImageWrap {

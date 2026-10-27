@@ -58,7 +58,12 @@ export function GuestDashboard({
 
         <div className={styles.categoryGrid}>
           {categories.map((category) => {
-            const coverItem = items.find((item) => item.categoryId === category.id);
+            const coverItem =
+              items.find(
+                (item) =>
+                  item.categoryId === category.id &&
+                  item.layoutVariant === 'feature-lead',
+              ) ?? items.find((item) => item.categoryId === category.id);
             const count = itemCountsByCategory[category.id] ?? 0;
             return (
               <button
@@ -77,17 +82,20 @@ export function GuestDashboard({
                     aspectRatio="landscape"
                     motion="hover-zoom"
                   />
+                  <span className={styles.categoryIcon} aria-hidden="true">
+                    {createElement(getCategoryIcon(category.id), { size: 18 })}
+                  </span>
                 </div>
                 <div className={styles.categoryBody}>
-                  <span className={styles.categoryIcon} aria-hidden="true">
-                    {createElement(getCategoryIcon(category.id), { size: 16 })}
-                  </span>
                   <span className={styles.categoryTitle}>{category.title}</span>
+                  {category.subtitle ? (
+                    <span className={styles.categorySubtitle}>{category.subtitle}</span>
+                  ) : null}
                   <span className={styles.categoryCount}>
                     {count} {count === 1 ? 'dish' : 'dishes'}
                   </span>
                   <ArrowRight
-                    size={16}
+                    size={18}
                     className={styles.categoryArrow}
                     aria-hidden="true"
                   />

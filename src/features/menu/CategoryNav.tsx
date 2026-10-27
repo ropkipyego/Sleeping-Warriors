@@ -1,12 +1,16 @@
 import { createElement, useRef } from 'react';
+import { LayoutGrid } from 'lucide-react';
 import { type MenuCategory } from '../../domain/menu.types';
 import { getCategoryIcon } from './categoryIcons';
 import styles from './CategoryNav.module.css';
 
+export const HOME_CATEGORY_TAB_ID = 'home';
+
 export interface CategoryNavProps {
   readonly categories: readonly MenuCategory[];
-  readonly activeCategoryId: string;
+  readonly activeCategoryId: string | null;
   readonly onSelectCategory: (categoryId: string) => void;
+  readonly onSelectHome: () => void;
   readonly itemCountsByCategory: Readonly<Record<string, number>>;
 }
 
@@ -14,10 +18,27 @@ export function CategoryNav({
   categories,
   activeCategoryId,
   onSelectCategory,
+  onSelectHome,
   itemCountsByCategory,
 }: CategoryNavProps) {
   const tabListRef = useRef<HTMLDivElement | null>(null);
-  const tabIds = categories.map((cat) => cat.id);
+  const tabIds = [HOME_CATEGORY_TAB_ID, ...categories.map((cat) => cat.id)];
+  const selectedTabId = activeCategoryId ?? HOME_CATEGORY_TAB_ID;
+
+  const focusTab = (tabId: string) => {
+    const buttonEl = tabListRef.current?.querySelector<HTMLButtonElement>(
+      `#tab-${tabId}`,
+    );
+    buttonEl?.focus();
+  };
+
+  const activateTab = (tabId: string) => {
+    if (tabId === HOME_CATEGORY_TAB_ID) {
+      onSelectHome();
+      return;
+    }
+    onSelectCategory(tabId);
+  };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (
@@ -30,7 +51,7 @@ export function CategoryNav({
     }
 
     event.preventDefault();
-    const currentIndex = Math.max(0, tabIds.indexOf(activeCategoryId));
+    const currentIndex = Math.max(0, tabIds.indexOf(selectedTabId));
     const nextIndex =
       event.key === 'ArrowRight'
         ? (currentIndex + 1) % tabIds.length
@@ -40,16 +61,13 @@ export function CategoryNav({
             ? 0
             : tabIds.length - 1;
 
-    const nextCategoryId = tabIds[nextIndex];
-    if (!nextCategoryId) {
+    const nextTabId = tabIds[nextIndex];
+    if (!nextTabId) {
       return;
     }
 
-    onSelectCategory(nextCategoryId);
-    const buttonEl = tabListRef.current?.querySelector<HTMLButtonElement>(
-      `#tab-${nextCategoryId}`,
-    );
-    buttonEl?.focus();
+    activateTab(nextTabId);
+    focusTab(nextTabId);
   };
 
   return (
@@ -66,8 +84,29 @@ export function CategoryNav({
           aria-orientation="horizontal"
           onKeyDown={handleKeyDown}
         >
+          <button
+            type="button"
+            role="tab"
+            id={`tab-${HOME_CATEGORY_TAB_ID}`}
+            tabIndex={selectedTabId === HOME_CATEGORY_TAB_ID ? 0 : -1}
+            aria-selected={selectedTabId === HOME_CATEGORY_TAB_ID}
+            className={[
+              styles.tabButton,
+              selectedTabId === HOME_CATEGORY_TAB_ID ? styles.tabActive : undefined,
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            onClick={() => {
+              onSelectHome();
+            }}
+            data-testid="category-tab-home"
+          >
+            <LayoutGrid size={14} aria-hidden="true" />
+            <span className={styles.tabTitle}>Home</span>
+          </button>
+
           {categories.map((category) => {
-            const isActive = activeCategoryId === category.id;
+            const isActive = selectedTabId === category.id;
             const count = itemCountsByCategory[category.id] ?? 0;
             const tabClass = [styles.tabButton, isActive ? styles.tabActive : undefined]
               .filter(Boolean)

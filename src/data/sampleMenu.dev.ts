@@ -10,7 +10,8 @@ import { type MenuCatalog, type MenuCategory, type MenuItem } from '../domain/me
  *   that specific ingredients are grown on the camp's land.
  * - All food photographs are Creative Commons / CC0 licensed third-party images stored
  *   locally in `/public/dev-sample-food/` with full attribution in `/public/dev-sample-food/manifest.json`.
- * - Production builds (`import.meta.env.PROD`) do NOT silently load this module.
+ * - Guest-preview builds may load this module until an official catalog is supplied.
+ *   The SAMPLE banner and `SAMPLE · KES` prefixes must remain visible.
  */
 
 export const SAMPLE_PREVIEW_NOTICE_TEXT = 'MENU PREVIEW — SAMPLE DISHES AND PRICES';
@@ -270,7 +271,7 @@ export const DEV_SAMPLE_MENU_ITEMS: readonly MenuItem[] = [
       'Sample dish: Sizzling skillet of seasonal market vegetables, crisp snow peas, and seared tofu served alongside a bowl of fragrant steamed jasmine grain.',
     priceKES: 1450,
     currency: 'KES',
-    available: false,
+    available: true,
     provenanceTags: [],
     dietaryTags: ['vegan', 'vegetarian', 'dairy-free', 'nut-free'],
     allergenNotes: 'Sample allergen note: Contains soy (tofu).',

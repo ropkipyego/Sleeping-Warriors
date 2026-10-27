@@ -16,7 +16,7 @@ Built as an independent, self-contained frontend application that reflects the c
   - Isolated in `src/data/sampleMenu.dev.ts` (`Breakfast`, `Garden & Lighter Meals`, `Main Courses`, `Sides & Staples`, `Desserts`, `Hot & Cold Beverages`).
   - Every price is formatted as `SAMPLE · KES ...` and accompanied by a discreet persistent notice (`"MENU PREVIEW — SAMPLE DISHES AND PRICES"`).
   - All 29 sample dish photographs are locally stored in `public/dev-sample-food/` with full Creative Commons / CC0 provenance in `public/dev-sample-food/manifest.json`.
-- **Production Safety Boundary (`src/data/catalog.boundary.ts`)**: Production builds (`import.meta.env.PROD`) never silently load sample dishes or sample prices; if no approved production catalog is supplied, an elegant empty-menu state (`awaiting_official_data`) is rendered.
+- **Guest-preview catalogue**: Dummy sample dishes are served until the camp supplies an approved production catalog. Every price remains `SAMPLE · KES ...` with the persistent notice `"MENU PREVIEW — SAMPLE DISHES AND PRICES"`.
 
 ---
 
@@ -66,4 +66,4 @@ This is a static Vite SPA. `vercel.json` points the build at `dist/` and rewrite
 npm run build
 ```
 
-Production builds never silently load sample dishes. Until an official catalog is supplied, guests see the awaiting-official-data empty state. Sample dishes appear only in `npm run dev`.
+Guest-preview deploys serve the dummy sample menu with the SAMPLE banner until an official catalog is supplied.

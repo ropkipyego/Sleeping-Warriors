@@ -8,7 +8,7 @@ export interface CampFooterProps {
 
 export function CampFooter({ isSamplePreview }: CampFooterProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-testid="camp-footer">
       <div className={styles.inner}>
         <div className={styles.topRow}>
           <div className={styles.brandCol}>

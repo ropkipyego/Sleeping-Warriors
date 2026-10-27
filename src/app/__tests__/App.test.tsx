@@ -40,7 +40,15 @@ describe('Sleeping Warrior Camp — Read-Only Digital Menu Catalogue', () => {
     }
 
     expect(screen.queryByTestId('menu-sections-container')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('category-navigation')).not.toBeInTheDocument();
+    expect(screen.getByTestId('camp-footer')).toBeInTheDocument();
+    expect(screen.getByTestId('category-navigation')).toBeInTheDocument();
+    expect(screen.getByTestId('category-tab-home')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    for (const category of DEV_SAMPLE_CATEGORIES) {
+      expect(screen.getByTestId(`category-tab-${category.id}`)).toBeInTheDocument();
+    }
     expect(screen.queryAllByTestId(/^view-details-/)).toHaveLength(0);
     expect(screen.queryByRole('button', { name: /view dish/i })).not.toBeInTheDocument();
   });
@@ -110,9 +118,10 @@ describe('Sleeping Warrior Camp — Read-Only Digital Menu Catalogue', () => {
     expect(screen.queryByTestId('menu-section-cat-breakfast')).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByTestId('category-tab-cat-garden-lighter'));
+    expect(screen.getByTestId('menu-item-sample-gd-grain-veg-bowl')).toBeInTheDocument();
     expect(
-      screen.getByTestId('unavailable-badge-sample-gd-grain-veg-bowl'),
-    ).toHaveTextContent(/Currently Unavailable/i);
+      screen.queryByTestId('unavailable-badge-sample-gd-grain-veg-bowl'),
+    ).not.toBeInTheDocument();
   });
 
   it('opens and closes the read-only dish detail drawer for all 29 sample items', () => {
@@ -150,6 +159,33 @@ describe('Sleeping Warrior Camp — Read-Only Digital Menu Catalogue', () => {
     }
   });
 
+  it('switches categories from the top bar, including back to home', () => {
+    render(<App />);
+
+    fireEvent.click(screen.getByTestId('category-tab-cat-desserts'));
+    expect(screen.getByTestId('menu-section-cat-desserts')).toBeInTheDocument();
+    expect(screen.queryByTestId('guest-dashboard')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('camp-footer')).not.toBeInTheDocument();
+    expect(screen.getByTestId('category-tab-cat-desserts')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+
+    fireEvent.click(screen.getByTestId('category-tab-cat-beverages'));
+    expect(screen.getByTestId('menu-section-cat-beverages')).toBeInTheDocument();
+    expect(screen.queryByTestId('menu-section-cat-desserts')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByTestId('category-tab-home'));
+    expect(screen.getByTestId('guest-dashboard')).toBeInTheDocument();
+    expect(screen.getByTestId('camp-footer')).toBeInTheDocument();
+    expect(screen.getByTestId('land-to-table-panel')).toBeInTheDocument();
+    expect(screen.queryByTestId('menu-sections-container')).not.toBeInTheDocument();
+    expect(screen.getByTestId('category-tab-home')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+  });
+
   it('returns to the dashboard from a category view', () => {
     render(<App />);
     openCategoryFromDashboard('cat-mains');
@@ -175,8 +211,19 @@ describe('Sleeping Warrior Camp — Read-Only Digital Menu Catalogue', () => {
     expect(screen.getByText(/Editorial Plate Preview/i)).toBeInTheDocument();
   });
 
-  it('renders the elegant empty-menu state in production mode when no approved catalog exists', () => {
+  it('serves the dummy sample dashboard in production until official data is supplied', () => {
     render(<App isProdEnvOverride={true} />);
+    expect(screen.getByTestId('guest-dashboard')).toBeInTheDocument();
+    expect(screen.getByTestId('sample-preview-banner')).toHaveTextContent(
+      SAMPLE_PREVIEW_NOTICE_TEXT,
+    );
+    expect(
+      screen.queryByTestId('empty-production-catalog-state'),
+    ).not.toBeInTheDocument();
+  });
+
+  it('renders the elegant empty-menu state when production_empty mode is forced', () => {
+    render(<App initialCatalogMode="production_empty" />);
     expect(screen.getByTestId('empty-production-catalog-state')).toBeInTheDocument();
     expect(
       screen.getByRole('heading', {

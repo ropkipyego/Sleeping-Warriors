@@ -2,6 +2,7 @@ import {
   CakeSlice,
   Coffee,
   GlassWater,
+  Heart,
   Leaf,
   type LucideIcon,
   Sprout,
@@ -21,7 +22,7 @@ const CATEGORY_ICONS: Readonly<Record<string, LucideIcon>> = {
 const SHAMBA_ICONS: Readonly<Record<string, LucideIcon>> = {
   'shamba-harvest': Sprout,
   'estate-coffee': Coffee,
-  'camp-livestock': Leaf,
+  'camp-livestock': Heart,
 };
 
 export function getCategoryIcon(categoryId: string): LucideIcon {

@@ -5,11 +5,11 @@ import { type MenuCatalog } from '../domain/menu.types';
 /**
  * Clean catalog / API boundary for resolving the active guest menu.
  *
- * - Keeps a single, well-typed boundary ready for future replacement with the camp's
- *   approved static catalog or read-only menu endpoint, without coupling to any POS.
- * - Production builds (`isProd === true`) NEVER silently load sample dishes or sample prices:
- *   if no approved production catalog is configured, `INITIAL_MENU_CATALOG`
- *   (`status: 'awaiting_official_data'`) is returned so the UI renders an elegant empty-menu state.
+ * Guest-preview delivery: dummy sample dishes are served until the camp supplies an
+ * approved production catalog (`status: 'ready'`). The SAMPLE banner and
+ * `SAMPLE · KES` prefixes remain required so this is never silent official data.
+ *
+ * `production_empty` still returns `INITIAL_MENU_CATALOG` for the empty-menu path.
  */
 
 export type CatalogResolutionMode =
@@ -22,7 +22,6 @@ export interface ResolveCatalogOptions {
 }
 
 export function resolveMenuCatalog(options: ResolveCatalogOptions = {}): MenuCatalog {
-  const isProd = options.isProdEnv ?? import.meta.env.PROD;
   const mode = options.mode ?? 'auto';
 
   if (mode === 'simulated_error') {
@@ -35,21 +34,8 @@ export function resolveMenuCatalog(options: ResolveCatalogOptions = {}): MenuCat
     return INITIAL_MENU_CATALOG;
   }
 
-  if (mode === 'sample_preview') {
-    if (isProd) {
-      // Production safety guard: never silently serve sample items in a production build
-      return options.approvedCatalog ?? INITIAL_MENU_CATALOG;
-    }
-    return DEV_SAMPLE_MENU_CATALOG;
-  }
-
-  // 'auto' mode:
   if (options.approvedCatalog?.status === 'ready') {
     return options.approvedCatalog;
-  }
-
-  if (isProd) {
-    return INITIAL_MENU_CATALOG;
   }
 
   return DEV_SAMPLE_MENU_CATALOG;

@@ -3,6 +3,7 @@
   backdrop-filter: var(--swc-blur-glass);
   -webkit-backdrop-filter: var(--swc-blur-glass);
   border-bottom: 1px solid var(--swc-color-glass-border);
+  box-shadow: var(--swc-shadow-glass);
 }
 
 .inner {
@@ -30,9 +31,9 @@
   display: inline-flex;
   align-items: center;
   gap: var(--swc-space-2);
-  padding: 9px 14px;
+  padding: 10px 14px;
   border: 1px solid transparent;
-  border-radius: var(--swc-radius-xs);
+  border-radius: var(--swc-radius-pill);
   background: transparent;
   color: var(--swc-text-secondary);
   font-family: var(--swc-font-sans);
